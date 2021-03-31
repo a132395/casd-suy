@@ -58,7 +58,7 @@ async function main(){
         url VARCHAR(10000) REFERENCES posts(url)
     );`);
 
-    let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=36&typeid=368&filter=typeid&typeid=368&page=1');
+    let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=104&page=1');
     const html = respone.body;
     const $ = cheerio.load(html);
     // console.log($("tbody[id^='normalthread']").length);
@@ -70,8 +70,8 @@ async function main(){
     //const match = lastPageHref.match(regex);
     //const forumPrefix = match[1];
     //const maxPageNumber = parseInt(match[2]);
-    const forumPrefix = 'forum.php?mod=forumdisplay&fid=36&typeid=368&filter=typeid&typeid=368&page='
-    const maxPageNumber = 187
+    const forumPrefix = 'forum.php?mod=forumdisplay&fid=104&page='
+    const maxPageNumber = 125
 
     console.log('Checking new posts...');
     const query_text = `INSERT INTO posts (url,title,postdate,downloaded)
@@ -80,7 +80,7 @@ async function main(){
     ON CONFLICT 
     DO NOTHING;`;
     // let visted = false;
-    for (let i = 3 ; i<= 187 ; i++){
+    for (let i = 2 ; i<= 125 ; i++){
         //
         
         const promises = [];
