@@ -155,7 +155,7 @@ async function restore_undownloaded(){
 }
 
 async function updateDB(){
-    let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=36&typeid=368&filter=typeid&typeid=368&page=1');
+    let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=104&page=1');
     const html = respone.body;
     const $ = cheerio.load(html);
     // console.log($("tbody[id^='normalthread']").length);
@@ -168,7 +168,7 @@ async function updateDB(){
     //const forumPrefix = match[1];
     //const maxPageNumber = parseInt(match[2]);
     //console.log(forumPrefix,maxPageNumber);
-    const forumPrefix = 'forum.php?mod=forumdisplay&fid=104&page=1'
+    const forumPrefix = 'forum.php?mod=forumdisplay&fid=104&page='
     const maxPageNumber = 165
 
     console.log('Checking new posts...');
