@@ -168,7 +168,7 @@ async function updateDB(){
     //const forumPrefix = match[1];
     //const maxPageNumber = parseInt(match[2]);
     //console.log(forumPrefix,maxPageNumber);
-    const forumPrefix = 'forum.php?mod=forumdisplay&fid=36&typeid=368&filter=typeid&typeid=368&page='
+    const forumPrefix = 'forum.php?mod=forumdisplay&fid=104&page=1'
     const maxPageNumber = 165
 
     console.log('Checking new posts...');
